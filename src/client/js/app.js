@@ -1,42 +1,40 @@
-import { submit } from './js/submit';
+import { submit } from './submit';
+const app = document.getElementsByTagName('body');
+const header = document.querySelector('.app__header');
+const main= document.querySelector('.app__main');
+const buttons = document.querySelector('.app__buttons');
 
-class App {
-  constructor() {
-      this.app = getElementsByTagName('BODY');
-      console.log(this.app);
-  }
-
-  setupDOMReferences() {
-      this.header = document.querySelector('.app__header');
-      this.main= document.querySelector('.app__main');
-      this.buttons = document.querySelector('.app__buttons');
-      console.log('checker', this);
-  }
-
-  createDOMElements() {
-    this.location = document.createElement('input');
-    this.location.type = 'text';
-    this.location.classList.add('app__buttons__location');
-    this.buttons.appendChild(this.location);
-
-    this.dateSelector = document.createElement('input');
-    this.dateSelector.type = 'date';
-    this.dateSelector.classList.add('app__buttons__date');
-    this.buttons.appendChild(this.dateSelector);
-
-    this.submit = document.createElement('button');
-    this.submit.innerText = 'Submit';
-    this.buttons.appendChild(this.submit);
-  }
-
-  addEventListeners() {
-    this.submit.addEventListener('click', doSomething());
-  }
-
-  init() {
-      setupDOMReferences();
-      createDOMElements();
-      addEventListeners();
-      console.log('putita');
-  }
+function createInputLocation() {
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.placeholder = 'location';
+    input.classList.add('app__buttons__location');    
+    buttons.appendChild(input);
 };
+
+function createInputDate() {
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.placeholder = 'date';
+    input.classList.add('app__buttons__date');
+    const appButtons = document.getElementById('app__buttons')
+    buttons.appendChild(input);
+};
+
+function createSubmitButton(){
+    const button = document.createElement('button');
+    button.innerText = 'Submit'
+    const appButtons = document.getElementById('app__buttons')
+    buttons.appendChild(button);
+}
+
+function ignition() {
+    createInputLocation();
+    createInputDate();
+    createSubmitButton();
+    console.log('putita');
+}
+
+ignition();
+
+export { ignition }; 
