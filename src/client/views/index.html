@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Test</title>
+  
+</head>
+
+<body class="app--root">
+
+  <div class="app">
+      <div class="app__base">
+          <header class="app__header">
+              <div>
+                  Logo
+              </div>
+              <div>
+                  navigation
+              </div>
+          </header>
+
+          <main class="app__main">
+              <div class="app__header"></div>
+              <div class="app__content"></div>
+              <div class="app__buttons"></div>
+          </main>
+
+          <footer class="app__footer">
+            <p>This is a footer</p>
+          </footer>
+
+      </div>
+  </div>
+
+  <script>
+      if ('serviceWorker' in navigator) {
+          window.addEventListener('load', ()=> {
+              navigator.serviceWorker.register('/service-worker.js');
+          });
+      }
+  </script>
+  <script src="../index.js"></script>
+</body>
+</html>
