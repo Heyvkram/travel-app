@@ -7,7 +7,7 @@ async function submit (params) {
     let coordinates = await getCoordinates(params.location, params.geonamesApi);
     let weather = await getWeather(coordinates, params.weatherApi)
     console.log(coordinates, weather);
-    
 }
+
 
 export { submit };
