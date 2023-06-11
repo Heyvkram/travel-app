@@ -1,20 +1,22 @@
-async function getCoordinates (name) {
-    let url = 'http://api.geonames.org/placeName?placename=${name}&maxRows=10&username=${process.env.GEONAMES_KEY}'
-    const response = await fetch(url, {
-        method: 'POST',
-        credentials: 'same-origin',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      });
+async function getCoordinates (location, geonames_api) {
 
+    console.log('@PARAMS getCoordinates: ', location, geonames_api);
+    let url = `http://api.geonames.org/searchJSON?q=${location}&maxRows=10&username=${geonames_api}`
+    //`http://api.geonames.org/citiesJSON?placename=${name}&lang=en&username=${geonames_api}`
+    console.log(url, 'GEONAMES -> url');
+    const response = await fetch(url);
     try {
-      const newData = await response.json();            
-       return newData;
-     }catch(error) {
-     console.log("error", error);
-     }
+        const cityData = await response.json()
+        const coordinates = {
+            lat: cityData.geonames[0].lat,
+            lon: cityData.geonames[0].lng
+        };
+        return coordinates;
+        
+    } catch (error) {
+        console.log("error", error);
+    }
+    
 }
 
 
