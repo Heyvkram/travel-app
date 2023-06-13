@@ -1,6 +1,7 @@
 import { submit } from './submit';
 import { geonames_api } from './app.config';
 import { weatherbit_api } from './app.config';
+import { getPicture_api } from './app.config';
 const app = document.getElementsByTagName('BODY');
 const root = document.querySelector('.app')
 const header = document.querySelector('.app__header');
@@ -39,7 +40,8 @@ function createSubmitButton(){
             location: locationInput.value, 
             geonamesApi: geonames_api, 
             date: dateInput.value, 
-            weatherApi: weatherbit_api
+            weatherApi: weatherbit_api,
+            picturesApi: getPicture_api
         };
         console.log(params, 'PRE LOGIC CHECK');
         if (checkFulfilledInputs(params.location, params.date)) {            
@@ -72,26 +74,8 @@ function createAlertMessage() {
         isAlertDisplayed = false
     }, 1500);    
     }
-        // Crea el alert y lo apende y lo remueve al segundo y medio
 }
 
-/*function createAlert(){    
-    let alert = document.createElement('div');
-    alert.classList.add('app__alert');
-    console.log('location ', locationInput.value, ' date ', dateInput.value );
-    if ( locationInput.value == '' && dateInput.value == '' ) {        
-        alert.innertext = 'Please provide your trip data'
-        root.appendChild(alert);   
-        console.log(app);     
-    } else if ( locationInput.value == '' ) {        
-        alert.innertext = 'Please provide a valid location'
-        root.appendChild(alert);
-    } else if ( dateInput.value == '' ) {        
-        alert.innertext = 'Please provide a valid location'
-        root.appendChild(alert);        
-    };
-    setTimeout(()=>{alert.remove(), 5000});
-};*/
 
 function ignition() {
     createInputLocation();

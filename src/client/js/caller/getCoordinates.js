@@ -11,7 +11,8 @@ async function getCoordinates (location, geonames_api) {
             lat: cityData.geonames[0].lat,
             lon: cityData.geonames[0].lng
         };
-        return coordinates;
+        console.log(cityData);
+        return coordinates;        
         
     } catch (error) {
         console.log("error", error);
