@@ -2,13 +2,13 @@ import { submit } from './submit';
 import { geonames_api } from './app.config';
 import { weatherbit_api } from './app.config';
 import { getPicture_api } from './app.config';
+import { displayAlert } from './utils/displayAlert';
 const app = document.getElementsByTagName('BODY');
 const root = document.querySelector('.app')
 const header = document.querySelector('.app__header');
 const main = document.querySelector('.app__main');
 const buttons = document.querySelector('.app__buttons');
 let isAlertDisplayed = false; 
-
 let locationInput = null;
 let dateInput = null;
 
@@ -27,7 +27,7 @@ function createInputDate() {
     dateInput.classList.add('app__buttons__date');    
     buttons.appendChild(dateInput);
 };
-
+ 
 function createSubmitButton(){
     const submitButton = document.createElement('button');
     submitButton.innerText = 'Submit'
@@ -42,12 +42,11 @@ function createSubmitButton(){
             date: dateInput.value, 
             weatherApi: weatherbit_api,
             picturesApi: getPicture_api
-        };
-        console.log(params, 'PRE LOGIC CHECK');
+        };        
         if (checkFulfilledInputs(params.location, params.date)) {            
-            submit(params);
+            submit(params);                                    
         } else {
-            createAlertMessage();
+            displayAlert('noData');
         }
     });
 }
