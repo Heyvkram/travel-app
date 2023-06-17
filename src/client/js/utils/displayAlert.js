@@ -1,7 +1,5 @@
-import { defaultUi } from "./resetAppContent";
-const content = document.querySelector('.app__content');
-const main = document.querySelector('.app__main');
-const root = document.querySelector('.app');
+const header = document.querySelector('.app__header');
+const title = document.querySelector('.app__header--title');
 
 function displayAlert(type) {        
     let messages = {
@@ -11,9 +9,11 @@ function displayAlert(type) {
     let alert = document.createElement('div');
     alert.classList.add('app__content--alert');
     alert.innerText = messages[type];
-    root.appendChild(alert);
+    title.innerText = '';
+    header.appendChild(alert);
     setTimeout(()=>{
-        root.removeChild(alert)        
+        header.removeChild(alert);
+        title.innerText = 'TRAVEL APP!';        
     }, 1500);
         
 }  

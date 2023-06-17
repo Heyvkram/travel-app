@@ -8,4 +8,4 @@ function defaultUi() {
     contentChildNodes[3].src = '';        
 }
 
-export { resetAppContent };
+export { defaultUi };
