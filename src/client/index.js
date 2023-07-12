@@ -4,9 +4,9 @@ import { getPicture } from './js/caller/getPicture.js';
 import { dateChecker } from './js/caller/dateChecker.js';
 import { updateUi } from './js/utils/updateui.js';
 import { displayAlert } from './js/utils/displayAlert.js';
-import { defaultUi } from './js/utils/resetAppContent.js';
 import { ignition } from './js/app.js';
-
+import { alertDisplayed } from './js/utils/alertDisplayed.js';
+import './styles/main.scss';
 
 
 export {
@@ -16,6 +16,6 @@ export {
     dateChecker,
     displayAlert,
     updateUi,
-    defaultUi,
-    ignition    
+    ignition,
+    alertDisplayed  
 };

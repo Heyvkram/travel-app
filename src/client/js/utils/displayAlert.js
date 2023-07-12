@@ -14,39 +14,7 @@ function displayAlert(type) {
     setTimeout(()=>{
         header.removeChild(alert);
         title.innerText = 'TRAVEL APP!';        
-    }, 1500);
-        
+    }, 1500);        
 }  
-    
-    
-    
-    
-    
-    
-    
-    
-  /* main.removeChild(content);
-    alert.innerText = 'Sorry! we can only provide the info for the next 16 days, try again later! : ('
-    root.appendChild(alert);
-    setTimeout(()=>{
-        root.removeChild(alert);
-        defaultUi();
-        main.appendChild(content);
-    }, 3000);    
-};
-
-function createAlertMessage() {
-    if(!isAlertDisplayed){
-    isAlertDisplayed = true
-    let alert = document.createElement('div');
-    alert.classList.add('app__alert');
-    alert.innerText = 'Please provide your trip data'
-    root.appendChild(alert);
-    setTimeout(()=>{
-        root.removeChild(alert)
-        isAlertDisplayed = false
-    }, 1500);    
-    }
-}*/
 
 export { displayAlert };

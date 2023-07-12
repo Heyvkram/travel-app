@@ -1,5 +1,5 @@
 const geonames_api = "heyv";
-const weatherbit_api = "a560b29cf854493f8ad77225ed42587c"
+const weatherbit_api = "d13c8fcb1d4a449c9c37efd1f13487b1"
 const getPicture_api = "37181558-0ed6745ca5b523cbd54d1eb48"
 
 export { geonames_api }

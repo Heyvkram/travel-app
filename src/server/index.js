@@ -1,6 +1,5 @@
 const dotenv = require('dotenv');
 dotenv.config();
-const path = require('path');
 const express = require('express');
 const app = express();
 
@@ -14,3 +13,10 @@ app.listen(8080, function () {
     console.log('http://localhost:8080/');
 });
 
+function portCheck(port){
+    if (port == 8080){
+        return true;
+    }else{
+        return false;
+    }
+};

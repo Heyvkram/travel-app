@@ -7,9 +7,7 @@ async function getPicture (location, getPicture_api) {
         return picture;      
     } catch (error) {
         console.log("error", error);
-    }
-    
+    }    
 }
-
 
 export { getPicture };

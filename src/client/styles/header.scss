@@ -1,0 +1,16 @@
+.app__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.app__header {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.app__header--title {
+    text-align: center;
+}

@@ -3,10 +3,7 @@ import { geonames_api } from './app.config';
 import { weatherbit_api } from './app.config';
 import { getPicture_api } from './app.config';
 import { displayAlert } from './utils/displayAlert';
-const app = document.getElementsByTagName('BODY');
 const root = document.querySelector('.app')
-const header = document.querySelector('.app__header');
-const main = document.querySelector('.app__main');
 const buttons = document.querySelector('.app__buttons');
 let isAlertDisplayed = false; 
 let locationInput = null;
@@ -52,13 +49,10 @@ function createSubmitButton(){
 }
 
 function checkFulfilledInputs(location, date) {
-    // console.log("params check file imput", params);
-    console.log('locate imput', location, 'date imput', date);
     if ( location == '' || date == '' ) { 
         return false;  
     };
-    return true;
-    //Comprueba los casos de error y retorna false si no sale algo bien || retorna true si todo correcto
+    return true;    
 }
 
 function createAlertMessage() {
