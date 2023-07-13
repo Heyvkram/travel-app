@@ -9,6 +9,7 @@ let isAlertDisplayed = false;
 let locationInput = null;
 let dateInput = null;
 
+// function to create an imput to type the location and append it to the buttons div
 function createInputLocation() {
     locationInput = document.createElement('input');
     locationInput.type = 'text';
@@ -17,6 +18,7 @@ function createInputLocation() {
     buttons.appendChild(locationInput);
 };
 
+//function to create an imput to set the date and append it to the buttons div
 function createInputDate() {
     dateInput = document.createElement('input');
     dateInput.type = 'date';
@@ -25,12 +27,14 @@ function createInputDate() {
     buttons.appendChild(dateInput);
 };
  
+//create the submit button and append it to the buttons div
 function createSubmitButton(){
     const submitButton = document.createElement('button');
     submitButton.innerText = 'Submit'
     buttons.appendChild(submitButton);
     let alert = document.createElement('div');
     alert.classList.add('app__alert');
+    //add the event listener
     submitButton.addEventListener('click', (e)=> { 
         const params = {
             event: e, 
@@ -48,6 +52,7 @@ function createSubmitButton(){
     });
 }
 
+//function to check if the imputs are filled returning true o false
 function checkFulfilledInputs(location, date) {
     if ( location == '' || date == '' ) { 
         return false;  
@@ -55,21 +60,7 @@ function checkFulfilledInputs(location, date) {
     return true;    
 }
 
-function createAlertMessage() {
-    if(!isAlertDisplayed){
-    isAlertDisplayed = true
-    let alert = document.createElement('div');
-    alert.classList.add('app__alert');
-    alert.innerText = 'Please provide your trip data'
-    root.appendChild(alert);
-    setTimeout(()=>{
-        root.removeChild(alert)
-        isAlertDisplayed = false
-    }, 1500);    
-    }
-}
-
-
+//ignition function to call all the others
 function ignition() {
     createInputLocation();
     createInputDate();
